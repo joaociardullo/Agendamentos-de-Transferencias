@@ -10,4 +10,6 @@ public interface TransferenciaService {
     Transferencia agendar(TransferenciaDTO transferenciaDTO);
 
     List<Transferencia> listarTodas();
+
+    void deletar(Long id);
 }

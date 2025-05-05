@@ -32,4 +32,10 @@ public class TransferenciaController {
         List<Transferencia> transferencias = service.listarTodas();
         return new ResponseEntity<>(transferencias, HttpStatus.OK);
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deletar(@PathVariable Long id) {
+        service.deletar(id);
+        return ResponseEntity.noContent().build();
+    }
 }

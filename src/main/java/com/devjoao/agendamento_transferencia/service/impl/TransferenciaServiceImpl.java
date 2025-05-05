@@ -12,6 +12,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @Service
 public class TransferenciaServiceImpl implements TransferenciaService {
@@ -38,5 +39,12 @@ public class TransferenciaServiceImpl implements TransferenciaService {
 
     public List<Transferencia> listarTodas() {
         return repository.findAll();
+    }
+
+    public void deletar(Long id) {
+        if (!repository.existsById(id)) {
+            throw new NoSuchElementException("Transferência não encontrada");
+        }
+        repository.deleteById(id);
     }
 }
