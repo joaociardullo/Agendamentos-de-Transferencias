@@ -8,5 +8,5 @@ import org.mapstruct.Mapper;
 public interface TransferenciaMapper {
     Transferencia toEntity(TransferenciaDTO dto);
 
-    //TransferenciaDTO toDto(Transferencia entity);
+    TransferenciaDTO toDomain(Transferencia entity);
 }

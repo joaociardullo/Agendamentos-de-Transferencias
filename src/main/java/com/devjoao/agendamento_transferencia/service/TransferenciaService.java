@@ -12,4 +12,6 @@ public interface TransferenciaService {
     List<Transferencia> listarTodas();
 
     void deletar(Long id);
+
+    List<Transferencia> listarPorContaOrigem(String contaOrigem);
 }

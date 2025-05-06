@@ -47,4 +47,9 @@ public class TransferenciaServiceImpl implements TransferenciaService {
         }
         repository.deleteById(id);
     }
+
+    @Override
+    public List<Transferencia> listarPorContaOrigem(String contaOrigem) {
+        return repository.findByContaOrigem(contaOrigem);
+    }
 }

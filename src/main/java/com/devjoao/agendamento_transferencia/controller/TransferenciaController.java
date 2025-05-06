@@ -38,4 +38,13 @@ public class TransferenciaController {
         service.deletar(id);
         return ResponseEntity.noContent().build();
     }
+
+    @GetMapping("/buscarContaOrigem/{contaOrigem}")
+    public ResponseEntity<List<Transferencia>> listarPorContaOrigem(@PathVariable String contaOrigem) {
+        List<Transferencia> transferencias = service.listarPorContaOrigem(contaOrigem);
+        if (transferencias.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(transferencias);
+    }
 }
